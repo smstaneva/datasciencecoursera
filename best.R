@@ -18,4 +18,3 @@ best <- function(state, outcome){
         df[which.min(df[, 2]), 1]
       
 }
-best("TX", "heart attack")
