@@ -20,5 +20,5 @@ rankall <- function(outcome, num = "best") {
         colnames(m)=c("hospital", "state")
         m <- as.data.frame(m, row.names = m[,2])
 }
-head(rankall("heart attack", 20), 10)
+
 
