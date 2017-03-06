@@ -38,3 +38,10 @@ features_names <- read.table("./features.txt", header = FALSE)
 names(features) <- features_names$V2
 
 dataset <- cbind(subject, activity, features)
+
+# Extract only the measurements on ?? and ?? for each measurement.
+
+features_names_meanstd <- features_names$V2[grep("mean\\(\\)|std\\(\\)", features_names$V2)]
+names_meanstd <- c("subject", "activity", as.character(features_names_meanstd))
+
+dataset <- subset(dataset, select = names_meanstd)
