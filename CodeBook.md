@@ -1,8 +1,9 @@
 #**Code Book**
+
 The Code Book contains information about the data and how the data is manipulated.  
 ##Variables
 
-| Variable | Description | Reference Sections |
+| Variable | Description | Reference |
 |---|---|---|   
 subject_test	| subject_test.txt file is read and assigned to variable | subject_test, subject_test.txt
 subject_train	| subject_train.txt file is read and assigned to variable | subject_train, subject_train.txt
@@ -20,7 +21,6 @@ names_meanstd	| New data frame is given labels and assigned to variable names_me
 activity_labels	| activity_labels.txt file is read and assigned to variable activity_labels	| activity_labels.txt
 dataset2	| Second tidy dataset has been derived from dataset with mean of variables for each activity and each subject | 	
  
- 
 ##**Data**
  
 The data was collected from the accelerometers from the Samsung Galaxy S Smartphone and is retrieved from the following link: 
