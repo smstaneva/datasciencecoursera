@@ -51,3 +51,12 @@ dataset <- subset(dataset, select = names_meanstd)
 activity_labels <-read.table("./activity_labels.txt", header = FALSE)
 dataset$activity <- factor(dataset$activity);
 dataset$activity <- factor(dataset$activity, labels = as.character(activity_labels$V2))
+
+# Appropriately label the data set with descriptive variable names.
+names(dataset)
+names(dataset)<-gsub("^t", "time", names(dataset))
+names(dataset)<-gsub("^f", "frequency", names(dataset))
+names(dataset)<-gsub("Acc", "Accelerometer", names(dataset))
+names(dataset)<-gsub("Gyro", "Gyroscope", names(dataset))
+names(dataset)<-gsub("Mag", "Magnitude", names(dataset))
+names(dataset)<-gsub("BodyBody", "Body", names(dataset))
