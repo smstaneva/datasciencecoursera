@@ -39,9 +39,15 @@ names(features) <- features_names$V2
 
 dataset <- cbind(subject, activity, features)
 
-# Extract only the measurements on ?? and ?? for each measurement.
+# Extract only the measurements on mean and std for each measurement.
 
 features_names_meanstd <- features_names$V2[grep("mean\\(\\)|std\\(\\)", features_names$V2)]
 names_meanstd <- c("subject", "activity", as.character(features_names_meanstd))
 
 dataset <- subset(dataset, select = names_meanstd)
+
+# Use descriptive activity names to name the activities in the data set
+
+activity_labels <-read.table("./activity_labels.txt", header = FALSE)
+dataset$activity <- factor(dataset$activity);
+dataset$activity <- factor(dataset$activity, labels = as.character(activity_labels$V2))
