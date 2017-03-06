@@ -60,3 +60,10 @@ names(dataset)<-gsub("Acc", "Accelerometer", names(dataset))
 names(dataset)<-gsub("Gyro", "Gyroscope", names(dataset))
 names(dataset)<-gsub("Mag", "Magnitude", names(dataset))
 names(dataset)<-gsub("BodyBody", "Body", names(dataset))
+
+# Create a second, independent tidy data set with the avg of each variable for each activity and each subject.
+
+library(plyr);
+dataset2<-aggregate(. ~subject + activity, dataset, mean)
+dataset2<-dataset2[order(dataset2$subject,dataset2$activity),]
+write.table(dataset2, file = "dataset2.txt",row.name=FALSE)
