@@ -16,6 +16,17 @@
 consumption <- read.table("./data/grep.txt", sep = ";", header = TRUE) 
 head(consumption)
 
+# convert the Date and Time variables to Date/Time classes
+
+class(consumption$Time)
+Time <- strptime(consumption$Time, "%H:%M:%S")
+class(Time)
+
+class(consumption$Date)
+Date <- as.Date(consumption$Date)
+class(Date)
+
+
 
 
 
