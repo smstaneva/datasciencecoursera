@@ -11,21 +11,13 @@
 
 # head -n 3 household_power_consumption.txt
 # grep "Date\|1/2/2007\|2/2/2007" household_power_consumption.txt > grep.txt
-# head -n 3 grep.txt
 
-consumption <- read.table("./data/grep.txt", sep = ";", header = TRUE) 
+# remove missing values coded as ?
+
+# grep -v "?" grep.txt > grep-v.txt
+
+consumption <- read.table("./data/grep-v.txt", sep = ";", header = TRUE) 
 head(consumption)
-
-# convert the Date and Time variables to Date/Time classes
-
-class(consumption$Time)
-Time <- strptime(consumption$Time, "%H:%M:%S")
-class(Time)
-
-class(consumption$Date)
-Date <- as.Date(consumption$Date)
-class(Date)
-
 
 
 
