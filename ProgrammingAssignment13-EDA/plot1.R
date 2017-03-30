@@ -19,6 +19,28 @@
 consumption <- read.table("./data/grep-v.txt", sep = ";", header = TRUE) 
 head(consumption)
 
+# convert the Date and Time variables to Date/Time classes
+
+lapply(consumption, class)
+Time <- strptime(consumption$Time, "%H:%M:%S")
+class(Time)
+
+class(consumption$Date)
+Date <- as.Date(consumption$Date)
+class(Date)
+
+# reconstruct Plot 1 using the base plotting system
+
+hist(consumption$Global_active_power, 
+     breaks = seq(0, 10, by = 0.5), 
+     col = "#800020", 
+     main = "Global Active Power", 
+     xlim = c(0, 7.5), 
+     ylim = c(0, 1200),
+     xlab = "Global Active Power (kilowatts)", 
+     ylab = "Frequency")
+
+
 
 
 
