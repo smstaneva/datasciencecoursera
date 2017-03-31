@@ -14,9 +14,9 @@
 
 # remove missing values coded as ?
 
-# grep -v "?" grep.txt > grep-v.txt
+# grep -v "?\|11/2/2007\|12/2/2007\|21/2/2007\|22/2/2007" grep.txt > grep-v.txt
 
-consumption <- read.table("./data/grep-v.txt", sep = ";", header = TRUE) 
+consumption <- read.table("./data/grep-v.txt", sep = ";", header = TRUE, stringsAsFactors = FALSE) 
 head(consumption)
 
 # convert the Date and Time variables to Date/Time classes
