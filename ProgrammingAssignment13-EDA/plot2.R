@@ -8,5 +8,8 @@ dow <- wday(Date, label = TRUE)
 
 plot(consumption$Global_active_power,
      type = "l",
-     xlab = NULL,
-     ylab = "Global Active Power (kilowatts)")
+     xlab = "",
+     ylab = "Global Active Power (kilowatts)", 
+     xaxt = "n")
+axis(1, at = c(0, 1500, 2900), labels = c("Thu", "Fri", "Sat"))
+
