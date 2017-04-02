@@ -22,6 +22,8 @@ head(consumption)
 # convert the Date and Time variables to Date/Time classes
 
 lapply(consumption, class)
+unique <- unique(consumption$Date)
+
 Time <- strptime(consumption$Time, "%H:%M:%S")
 class(Time)
 
@@ -40,7 +42,10 @@ hist(consumption$Global_active_power,
      xlab = "Global Active Power (kilowatts)", 
      ylab = "Frequency")
 
+# save the plot to a PNG file with a width of 480 pixels and a height of 480 pixels
 
+dev.copy(png, file = "plot1.png")
+dev.off()
 
 
 
