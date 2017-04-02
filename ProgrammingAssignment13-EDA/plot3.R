@@ -37,7 +37,7 @@ plot(consumption$Sub_metering_3,
      type = "l",
      col = "#4bc6df")
 
-legend("topright", pch = 150, col = c("black", "#cd0033", "#4bc6df"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+legend("topright", pch = 150, col = c("black", "#cd0033", "#4bc6df"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), x.intersp = 0.5)
 axis(1, at = c(0, 1500, 2900), labels = c("Thu", "Fri", "Sat"))
 box()
 
