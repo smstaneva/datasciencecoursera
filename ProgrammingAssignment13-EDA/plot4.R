@@ -60,3 +60,8 @@ plot(consumption$Global_reactive_power,
      xaxt = "n")
 axis(1, at = c(0, 1500, 2900), labels = c("Thu", "Fri", "Sat"))
 box()
+
+# save the plot to a PNG file with a width of 480 pixels and a height of 480 pixels
+
+dev.copy(png, file = "plot4.png")
+dev.off()
