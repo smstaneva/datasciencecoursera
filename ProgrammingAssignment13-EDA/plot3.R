@@ -26,7 +26,7 @@ plot(consumption$Sub_metering_2,
      xlab = "",
      ylab = "", 
      type = "l",
-     col = "#800020")
+     col = "#cd0033")
 
 par(new = T)
 plot(consumption$Sub_metering_3,
@@ -35,7 +35,8 @@ plot(consumption$Sub_metering_3,
      xlab = "",
      ylab = "", 
      type = "l",
-     col = "#04285a")
+     col = "#4bc6df")
 
-legend("topright", col = c("black", "#800020", "#04285a"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+legend("topright", pch = 150, col = c("black", "#cd0033", "#4bc6df"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 axis(1, at = c(0, 1500, 2900), labels = c("Thu", "Fri", "Sat"))
+box()
