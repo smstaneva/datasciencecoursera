@@ -40,3 +40,8 @@ plot(consumption$Sub_metering_3,
 legend("topright", pch = 150, col = c("black", "#cd0033", "#4bc6df"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 axis(1, at = c(0, 1500, 2900), labels = c("Thu", "Fri", "Sat"))
 box()
+
+# save the plot to a PNG file with a width of 480 pixels and a height of 480 pixels
+
+dev.copy(png, file = "plot3.png")
+dev.off()
