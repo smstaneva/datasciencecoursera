@@ -16,3 +16,7 @@ str(x0)
 
 mean(is.na(x0))
 
+# check class
+
+class(x0)
+
