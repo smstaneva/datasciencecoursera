@@ -34,10 +34,13 @@ summary(pm2)
 pm3 <- NEI[which(NEI$year == 2008), "Emissions"]
 summary(pm3)
 
-lmts <- range(pm0, pm1, pm2, pm3)
+boxplot(Emissions ~ year, NEI,
+        main = "Total PM2.5 Emissions",
+        col = "#800020", 
+        ylim = c(0, 0.4))
 
-boxplot(pm0, pm1, pm2, pm3,
-        ylim = lmts,
-        ylab = "Total 2.5 Emissions", 
-        names = c("1999", "2002", "2005", "2008"))
-axis(2, ylim = c(0, max(pm1["Emissions"])))
+# save the plot to a PNG file with a width of 480 pixels and a height of 480 pixels
+
+dev.copy(png, file = "plot1.png")
+dev.off()
+
