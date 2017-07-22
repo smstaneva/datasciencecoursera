@@ -49,3 +49,11 @@ summary(x3)
 
 x4<- pm4$Emissions
 summary(x4)
+
+# construct plot1 using the base plotting system
+
+boxplot(x1, x2, x3, x4)
+
+boxplot(log10(x1), log10(x2), log10(x3), log10(x4), 
+        main = "Total PM2.5 Emissions",
+        col = "#800020")
