@@ -3,27 +3,20 @@
 NEI <- readRDS("summarySCC_PM25.rds")
 SCC <- readRDS("Source_Classification_Code.rds")
 
-# construct plot2 using the base plotting system
 
-# show PM2.5 emission for each year
+pm1<- NEI[which(NEI$year == 1999), ]
+pm2<- NEI[which(NEI$year == 2002), ]
+pm3<- NEI[which(NEI$year == 2005), ]
+pm4<- NEI[which(NEI$year == 2008), ]
 
-NEI <- cbind(rownames(NEI), NEI)
-rownames(NEI) <- NULL
-colnames(NEI) <- c("Site.ID", "fips", "SCC", "Pollutant", "Emissions", "type", "year")
+PM1 <- pm1[which(pm1$fips == "24510"),]
+PM2 <- pm2[which(pm2$fips == "24510"),]
+PM3 <- pm3[which(pm3$fips == "24510"),]
+PM4 <- pm4[which(pm4$fips == "24510"),]
 
-pm0 <- NEI[which(NEI$year == 1999 & NEI$fips =="24510"),"Emissions"]
-summary(pm0)
+head(PM1)
 
-pm1 <- NEI[which(NEI$year == 2002 & NEI$fips =="24510"), "Emissions"]
-summary(pm1)
-
-pm2 <- NEI[which(NEI$year == 2005 & NEI$fips =="24510"), "Emissions"]
-summary(pm2)
-
-pm3 <- NEI[which(NEI$year == 2008 & NEI$fips =="24510"), "Emissions"]
-summary(pm3)
-
-boxplot(Emissions ~ year, NEI, NEI$fips =="24510",
-        main = "Total PM2.5 Emissions in Baltimore, Maryland",
-        col = "#800020",
-        ylim = c(0, 0.4))
+X1 <- PM1$Emissions
+X2 <- PM2$Emissions
+X3 <- PM3$Emissions
+X4 <- PM4$Emissions
