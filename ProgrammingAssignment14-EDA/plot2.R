@@ -3,16 +3,12 @@
 NEI <- readRDS("summarySCC_PM25.rds")
 SCC <- readRDS("Source_Classification_Code.rds")
 
+pm1 <- subset(NEI, fips == "24510")
 
-pm1<- NEI[which(NEI$year == 1999), ]
-pm2<- NEI[which(NEI$year == 2002), ]
-pm3<- NEI[which(NEI$year == 2005), ]
-pm4<- NEI[which(NEI$year == 2008), ]
-
-PM1 <- pm1[which(pm1$fips == "24510"),]
-PM2 <- pm2[which(pm2$fips == "24510"),]
-PM3 <- pm3[which(pm3$fips == "24510"),]
-PM4 <- pm4[which(pm4$fips == "24510"),]
+PM1 <- subset(pm1, pm1$year == 1999)
+PM2 <- subset(pm1, pm1$year == 2002)
+PM3 <- subset(pm1, pm1$year == 2005)
+PM4 <- subset(pm1, pm1$year == 2008)
 
 head(PM1)
 
