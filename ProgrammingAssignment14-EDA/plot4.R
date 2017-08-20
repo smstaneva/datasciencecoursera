@@ -23,3 +23,8 @@ boxplot(X1, X2, X3, X4)
 boxplot(log10(X1), log10(X2), log10(X3), log10(X4), 
         main = "Emissions from Coal Combustion - Related Sources across USA",
         col = "#bfb6b4")
+
+# save plot to a png file
+
+dev.copy(png, file = "plot4.png")
+dev.off()
