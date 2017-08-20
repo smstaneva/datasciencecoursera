@@ -14,3 +14,8 @@ library("ggplot2")
 ggplot(data = pm1, aes(x = year, y = Emissions, color = type)) +
         geom_line() + 
         facet_wrap( ~ type)
+
+# save plot to a png file
+
+dev.copy(png, file = "plot3.png")
+dev.off()
