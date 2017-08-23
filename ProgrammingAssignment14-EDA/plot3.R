@@ -13,7 +13,8 @@ library("ggplot2")
 
 ggplot(data = pm1, aes(x = year, y = Emissions, color = type)) +
         geom_line() + 
-        facet_wrap( ~ type)
+        facet_wrap( ~ type) +
+        ggtitle("PM2.5 Emissions in Baltimore City by Type")
 
 # save plot to a png file
 
