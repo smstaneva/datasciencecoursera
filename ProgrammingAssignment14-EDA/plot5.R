@@ -73,7 +73,6 @@ unique(grep23)
 
 x0 <- subset(NEI, fips == "24510")
 
-
 install.packages("dplyr")
 library(dplyr)
 
@@ -86,29 +85,18 @@ emissions <- x0 %>%
 # get columns of interest from SCC
 
 vehicle <- SCC %>%
-  filter(grepl("[Vv]ehicle", EI.Sector))%>%
+  filter(grepl("[Vv]ehicle", EI.Sector)) %>%
   select(SCC, EI.Sector)
 
-x0 <- inner_join(emissions, vehicle, by = "SCC")
+x1 <- inner_join(emissions, vehicle, by = "SCC")
 
-pm1 <- subset(emissions, emissions$year == 1999)
-pm2 <- subset(emissions, emissions$year == 2002)
-pm3 <- subset(emissions, emissions$year == 2005)
-pm4 <- subset(emissions, emissions$year == 2008)
+install.packages("ggplot2")
+library(ggplot2)
 
-x1 <- pm1$Emissions
-x2 <- pm2$Emissions
-x3 <- pm3$Emissions
-x4 <- pm4$Emissions
-
-# construct plot5 using base plotting system
-
-boxplot(x1, x2, x3, x4)
-
-boxplot(log10(x1), log10(x2), log10(x3), log10(x4), 
-        main = "Emissions from Motor Vehicle Sources in Baltimore",
-        names = c("1999", "2002", "2005", "2008"),
-        col = "#020a40")
+ggplot(x1, aes(factor(year), y = Emissions, color = year)) +
+        geom_boxplot(size = 1) +
+        scale_y_log10() +
+        ggtitle("Emissions from Motor Vehicle Sources in BC from 1999-2008")
 
 # save plot to a png file
 
