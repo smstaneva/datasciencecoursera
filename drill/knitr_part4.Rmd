@@ -1,0 +1,10 @@
+# My First knitr Document
+
+## Introduction
+
+This is some text (i.e. a "text chunk"). Here is a code chunk. 
+```{r simulation,echo=FALSE}
+set.seed(1)
+x <- rnorm(100)
+mean(x)
+```
